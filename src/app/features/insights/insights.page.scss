@@ -1,0 +1,44 @@
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.post-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  article {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    padding: 1rem;
+
+    p {
+      margin: 0 0 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    span {
+      color: var(--text-muted);
+      line-height: 1.6;
+      display: block;
+      margin-top: 0.6rem;
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .post-grid {
+    grid-template-columns: 1fr;
+  }
+}

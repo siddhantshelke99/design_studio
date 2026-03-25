@@ -1,0 +1,31 @@
+.footer {
+  margin-top: 5rem;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  color: var(--text-muted);
+
+  h3 {
+    margin: 0 0 0.5rem;
+    color: var(--text);
+    font-size: 1rem;
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--text);
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,27 @@
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.contact-layout {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.1fr 1fr;
+
+  p {
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  a {
+    color: var(--text);
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}

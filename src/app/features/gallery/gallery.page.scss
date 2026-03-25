@@ -1,0 +1,19 @@
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.masonry {
+  columns: 3 260px;
+  column-gap: 1rem;
+
+  img {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    break-inside: avoid;
+  }
+}

@@ -1,0 +1,40 @@
+<app-hero [title]="hero.title" [subtitle]="hero.subtitle" [image]="hero.image"></app-hero>
+
+<section class="block reveal" appRevealOnScroll>
+  <p class="eyebrow">Who We Are</p>
+  <h2>Highway Star Mobility Design Studio</h2>
+  <div class="columns">
+    @for (item of highlights; track item) {
+      <p>{{ item }}</p>
+    }
+  </div>
+</section>
+
+<section class="block reveal" appRevealOnScroll>
+  <div class="title-row">
+    <div>
+      <p class="eyebrow">Selected Work</p>
+      <h2>Projects / Portfolio</h2>
+    </div>
+    <a routerLink="/projects">View All</a>
+  </div>
+  <div class="project-grid">
+    @for (project of featuredProjects; track project.id) {
+      <app-project-card [project]="project"></app-project-card>
+    }
+  </div>
+</section>
+
+<section class="block reveal" appRevealOnScroll>
+  <p class="eyebrow">What We Do</p>
+  <h2>Services</h2>
+  <div class="service-grid">
+    @for (service of featuredServices; track service.title) {
+      <article>
+        <img [src]="service.image" [alt]="service.title" loading="lazy" />
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+      </article>
+    }
+  </div>
+</section>

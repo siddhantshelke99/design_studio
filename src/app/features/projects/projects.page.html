@@ -1,0 +1,18 @@
+<section>
+  <p class="eyebrow">Portfolio</p>
+  <h1>Projects</h1>
+
+  <div class="filters">
+    @for (category of categories; track category) {
+      <button [class.active]="activeCategory() === category" (click)="setCategory(category)">
+        {{ category }}
+      </button>
+    }
+  </div>
+
+  <div class="grid">
+    @for (project of filteredProjects; track project.id) {
+      <app-project-card [project]="project"></app-project-card>
+    }
+  </div>
+</section>

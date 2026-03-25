@@ -1,0 +1,42 @@
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(130deg, #0f1a1d, #123136, #1e545d);
+  color: #f3f7f8;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.84rem;
+  transition: opacity 0.55s ease, visibility 0.55s ease;
+
+  span {
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 999px;
+    padding: 0.55rem 1.1rem;
+  }
+
+  &.done {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.page-shell {
+  width: min(1220px, 92vw);
+  margin: 1rem auto 0;
+  animation: content-fade 0.7s ease;
+}
+
+@keyframes content-fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

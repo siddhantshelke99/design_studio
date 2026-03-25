@@ -1,0 +1,148 @@
+<section class="courses-hero">
+  <div class="badge">HSMDA Courses</div>
+  <h1>Design Your Future In Automotive Digital Design + Clay Sculpting</h1>
+  <p>
+    A professionally structured learning path built by industry practitioners to transform students into
+    portfolio-ready design professionals.
+  </p>
+</section>
+
+<section class="courses-section">
+  <div class="section-head">
+    <p>Upcoming Batches</p>
+    <h2>Intakes & Seats Availability</h2>
+  </div>
+
+  <div class="batch-grid">
+    @for (batch of batches; track batch.name) {
+      <article>
+        <h3>{{ batch.name }}</h3>
+        <p><strong>Start:</strong> {{ batch.startDate }}</p>
+        <p><strong>Schedule:</strong> {{ batch.schedule }}</p>
+        <span>{{ batch.seatsLeft }} seats left</span>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="courses-section">
+  <div class="section-head">
+    <p>Our Programs</p>
+    <h2>Detailed Course Tracks</h2>
+  </div>
+
+  <div class="program-grid">
+    @for (program of programs; track program.title) {
+      <article class="program-card">
+        <img [src]="program.image" [alt]="program.title" loading="lazy" />
+        <div class="meta">
+          <span>{{ program.level }}</span>
+          <h3>{{ program.title }}</h3>
+          <p><strong>Duration:</strong> {{ program.duration }}</p>
+          <p><strong>Fee:</strong> {{ program.fee }}</p>
+          <ul>
+            @for (point of program.focus; track point) {
+              <li>{{ point }}</li>
+            }
+          </ul>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="courses-section">
+  <div class="section-head">
+    <p>Why Choose Us</p>
+    <h2>What Makes HSMDA Different</h2>
+  </div>
+
+  <div class="benefit-grid">
+    @for (benefit of benefits; track benefit.title) {
+      <article>
+        <h3>{{ benefit.title }}</h3>
+        <p>{{ benefit.description }}</p>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="courses-section">
+  <div class="section-head">
+    <p>Download Brochure</p>
+    <h2>Course Overview Brochure</h2>
+  </div>
+
+  <div class="brochure-card">
+    <img src="/assets/media/course1.jpeg" alt="HSMDA brochure preview" />
+    <div>
+      <h3>HSMDA Course Brochure</h3>
+      <p>Get the complete curriculum snapshot, training process, and admission details.</p>
+      <a href="/assets/media/course1.jpeg" download="HSMDA-Course-Brochure.jpg">Download Brochure</a>
+    </div>
+  </div>
+</section>
+
+<section class="courses-section">
+  <div class="section-head">
+    <p>Model Showcase</p>
+    <h2>Student & Studio Model Development</h2>
+  </div>
+
+  <div class="model-grid">
+    @for (item of gallery; track item) {
+      <img [src]="item" alt="HSMDA model showcase" loading="lazy" />
+    }
+  </div>
+</section>
+
+<section class="courses-section">
+  <div class="section-head">
+    <p>Course Inquiry</p>
+    <h2>Talk To Admissions Team</h2>
+  </div>
+
+  <form class="inquiry-form" [formGroup]="inquiryForm" (ngSubmit)="submitInquiry()">
+    <label>
+      Full Name
+      <input type="text" formControlName="fullName" placeholder="Your full name" />
+    </label>
+
+    <label>
+      Email
+      <input type="email" formControlName="email" placeholder="you@example.com" />
+    </label>
+
+    <label>
+      Phone Number
+      <input type="text" formControlName="phone" placeholder="Your phone number" />
+    </label>
+
+    <label>
+      Course Interest
+      <select formControlName="courseInterest">
+        <option value="Fundamentals of Transportation Design">Fundamentals of Transportation Design</option>
+        <option value="Digital Design + Clay Sculpting & Prototyping">Digital Design + Clay Sculpting & Prototyping</option>
+      </select>
+    </label>
+
+    <label class="full-width">
+      Message
+      <textarea rows="4" formControlName="message" placeholder="Tell us about your background and goals"></textarea>
+    </label>
+
+    <button type="submit" [disabled]="inquiryLoading()">
+      {{ inquiryLoading() ? 'Submitting...' : 'Submit Inquiry' }}
+    </button>
+
+    <p class="status">{{ inquiryStatus() }}</p>
+  </form>
+</section>
+
+<section class="cta">
+  <div>
+    <h2>Admissions Open For Upcoming Batch</h2>
+    <p>Build your design portfolio with mentorship, studio exposure, and practical model-making experience.</p>
+  </div>
+  <a href="mailto:infomail@hsmdesigns.in">Apply / Enquire</a>
+</section>

@@ -1,0 +1,9 @@
+<section>
+  <p class="eyebrow">Gallery</p>
+  <h1>Studio Moments</h1>
+  <div class="masonry">
+    @for (item of media; track item) {
+      <img [src]="item" alt="HSM gallery image" loading="lazy" />
+    }
+  </div>
+</section>

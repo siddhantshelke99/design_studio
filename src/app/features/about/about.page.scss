@@ -1,0 +1,61 @@
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.lead {
+  color: var(--text-muted);
+  max-width: 65ch;
+}
+
+.grid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  article {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 14px;
+    padding: 1rem;
+    line-height: 1.6;
+  }
+}
+
+.academy {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1rem;
+
+  img {
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  div {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1rem;
+    background: var(--surface);
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid,
+  .academy {
+    grid-template-columns: 1fr;
+  }
+}

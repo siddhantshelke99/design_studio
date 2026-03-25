@@ -1,0 +1,19 @@
+<section>
+  <p class="eyebrow">Our Services</p>
+  <h1>Design, Build, Prototype</h1>
+  <p class="lead">
+    We support manufacturing process requirements during product development until finished product.
+  </p>
+
+  <div class="service-list">
+    @for (service of services; track service.title) {
+      <article>
+        <img [src]="service.image" [alt]="service.title" loading="lazy" />
+        <div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>

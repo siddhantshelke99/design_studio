@@ -1,0 +1,26 @@
+@if (project) {
+  <article>
+    <a class="back" routerLink="/projects">Back to projects</a>
+    <p class="eyebrow">{{ project.category }}</p>
+    <h1>{{ project.title }}</h1>
+    <p class="lead">{{ project.description }}</p>
+
+    <div class="tag-row">
+      @for (tag of project.tags; track tag) {
+        <span>{{ tag }}</span>
+      }
+    </div>
+
+    <div class="media-grid">
+      @for (item of project.media; track item.src) {
+        @if (item.type === 'video') {
+          <video [src]="item.src" controls muted playsinline></video>
+        } @else {
+          <img [src]="item.src" [alt]="item.alt" loading="lazy" />
+        }
+      }
+    </div>
+  </article>
+} @else {
+  <p>Project not found.</p>
+}

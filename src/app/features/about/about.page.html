@@ -1,0 +1,25 @@
+<section class="about reveal" appRevealOnScroll>
+  <p class="eyebrow">About</p>
+  <h1>Automotive Design & Research</h1>
+  <p class="lead">
+    Highway Star Mobility Design Studio and Academy train, design, and prototype with one integrated workflow.
+  </p>
+  <div class="grid">
+    @for (item of highlights; track item) {
+      <article>{{ item }}</article>
+    }
+  </div>
+</section>
+
+<section class="academy reveal" appRevealOnScroll>
+  <img src="/assets/media/course1.jpeg" alt="Academy" loading="lazy" />
+  <div>
+    <h2>{{ academy.headline }}</h2>
+    <ul>
+      <li>{{ academy.level }}</li>
+      <li>{{ academy.courseTitle }}</li>
+      <li>Duration: {{ academy.duration }}</li>
+      <li>Fee: {{ academy.fee }}</li>
+    </ul>
+  </div>
+</section>
