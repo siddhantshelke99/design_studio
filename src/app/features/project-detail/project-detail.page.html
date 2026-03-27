@@ -1,5 +1,5 @@
 @if (project) {
-  <article>
+  <article class="reveal" appRevealOnScroll>
     <a class="back" routerLink="/projects">Back to projects</a>
     <p class="eyebrow">{{ project.category }}</p>
     <h1>{{ project.title }}</h1>
@@ -24,3 +24,4 @@
 } @else {
   <p>Project not found.</p>
 }
+

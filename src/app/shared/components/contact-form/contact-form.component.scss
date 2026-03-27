@@ -1,6 +1,11 @@
 .contact-form {
   display: grid;
   gap: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
 
   label {
     display: grid;
@@ -17,6 +22,13 @@
     border-radius: 12px;
     padding: 0.75rem 0.85rem;
     font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+    }
   }
 
   button {
@@ -25,14 +37,29 @@
     border: 0;
     border-radius: 999px;
     padding: 0.65rem 1.2rem;
-    background: var(--accent);
+    background: linear-gradient(130deg, var(--accent), color-mix(in srgb, var(--accent) 72%, #000));
     color: #fff;
     cursor: pointer;
+    transition: transform 0.25s ease, filter 0.25s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+    }
   }
 
   p {
     min-height: 1.2rem;
     color: var(--text-muted);
     margin: 0;
+  }
+}
+
+:root[data-theme='dark'] .contact-form {
+  background: linear-gradient(145deg, color-mix(in srgb, var(--surface) 95%, #0a1219 5%), var(--surface));
+
+  input,
+  textarea {
+    background: color-mix(in srgb, var(--surface-2) 88%, #0a1218 12%);
   }
 }

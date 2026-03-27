@@ -10,6 +10,11 @@
   color: var(--text-muted);
 }
 
+h1 {
+  margin: 0.45rem 0 0.75rem;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
 .lead {
   color: var(--text-muted);
   max-width: 70ch;
@@ -27,6 +32,7 @@
     border-radius: 999px;
     padding: 0.3rem 0.7rem;
     font-size: 0.85rem;
+    background: color-mix(in srgb, var(--surface) 88%, #ffffff 12%);
   }
 }
 
@@ -41,6 +47,14 @@
     border-radius: 16px;
     border: 1px solid var(--border);
     background: #000;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+  }
+
+  img:hover,
+  video:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
   }
 }
 

@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { ProjectCardComponent } from '../../shared/components/project-card/project-card.component';
 import { projects } from '../../shared/data/content.data';
+import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scroll/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-projects-page',
-  imports: [ProjectCardComponent],
+  imports: [ProjectCardComponent, RevealOnScrollDirective],
   templateUrl: './projects.page.html',
   styleUrl: './projects.page.scss'
 })

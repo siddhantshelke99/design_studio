@@ -9,16 +9,22 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 2rem;
-  background: color-mix(in srgb, var(--bg) 90%, transparent);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid transparent;
+  padding: 0.95rem 1.35rem;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  backdrop-filter: blur(16px);
   transition: all 0.25s ease;
 
   &.scrolled {
-    border-bottom-color: var(--border);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    border-color: var(--border);
+    box-shadow: 0 14px 28px color-mix(in srgb, var(--brand-glow) 65%, transparent);
   }
+}
+
+:root[data-theme='dark'] .navbar {
+  background: color-mix(in srgb, #0a141b 82%, transparent);
+  border-color: color-mix(in srgb, var(--border) 85%, transparent);
 }
 
 .brand {
@@ -36,6 +42,11 @@
     object-fit: contain;
     border-radius: 50%;
   }
+
+  span {
+    font-family: 'Sora', sans-serif;
+    letter-spacing: 0.02em;
+  }
 }
 
 .menu-btn {
@@ -45,7 +56,7 @@
 nav {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.05rem;
 
   a,
   .theme-btn {
@@ -62,7 +73,7 @@ nav {
       content: '';
       position: absolute;
       left: 0;
-      bottom: -0.35rem;
+      bottom: -0.32rem;
       width: 100%;
       height: 2px;
       border-radius: 999px;
@@ -85,8 +96,8 @@ nav {
   .theme-btn {
     padding: 0.35rem 0.8rem;
     border-radius: 999px;
-    border: 1px solid var(--border);
-    background: var(--surface-2);
+    border: 1px solid color-mix(in srgb, var(--accent) 36%, var(--border));
+    background: color-mix(in srgb, var(--surface-2) 84%, var(--brand-glow));
 
     &::after {
       display: none;
@@ -106,15 +117,16 @@ nav {
 
   nav {
     position: absolute;
-    right: 1rem;
-    top: 70px;
+    right: 0.8rem;
+    top: 66px;
     flex-direction: column;
     align-items: flex-start;
-    width: min(250px, 90vw);
+    width: min(265px, 90vw);
     padding: 1rem;
     border-radius: 16px;
     border: 1px solid var(--border);
     background: var(--surface);
+    box-shadow: var(--shadow-sm);
     opacity: 0;
     pointer-events: none;
     transform: translateY(-8px);
@@ -125,5 +137,9 @@ nav {
       pointer-events: auto;
       transform: translateY(0);
     }
+  }
+
+  :root[data-theme='dark'] nav {
+    background: color-mix(in srgb, var(--surface) 94%, #0a1218 6%);
   }
 }

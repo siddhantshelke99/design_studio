@@ -1,7 +1,9 @@
 .footer {
   margin-top: 5rem;
-  padding: 2rem;
-  border-top: 1px solid var(--border);
+  padding: 1.3rem;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--surface) 94%, #ffffff 6%);
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -22,6 +24,11 @@
     color: var(--text);
     text-decoration: none;
   }
+}
+
+:root[data-theme='dark'] .footer {
+  background: linear-gradient(145deg, color-mix(in srgb, var(--surface) 94%, #0a1218 6%), var(--surface));
+  box-shadow: inset 0 1px 0 color-mix(in srgb, #ffffff 7%, transparent);
 }
 
 @media (max-width: 700px) {

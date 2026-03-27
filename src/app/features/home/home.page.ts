@@ -12,7 +12,7 @@ import { aboutHighlights, heroSlides, projects, services } from '../../shared/da
   styleUrl: './home.page.scss'
 })
 export default class HomePage {
-  readonly hero = heroSlides[0];
+  readonly heroSlides = heroSlides;
   readonly highlights = aboutHighlights;
   readonly featuredProjects = projects.slice(0, 3);
   readonly featuredServices = services;

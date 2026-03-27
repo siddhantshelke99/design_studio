@@ -1,11 +1,19 @@
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.75rem;
-  color: var(--text-muted);
+.about {
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  h1 {
+    margin: 0.45rem 0 0;
+    font-size: clamp(1.9rem, 4.2vw, 3rem);
+  }
 }
 
 .lead {
+  margin-top: 0.8rem;
   color: var(--text-muted);
   max-width: 65ch;
 }
@@ -22,6 +30,13 @@
     border-radius: 14px;
     padding: 1rem;
     line-height: 1.6;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+  }
+
+  article:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
   }
 }
 
@@ -36,6 +51,7 @@
     border-radius: 16px;
     object-fit: cover;
     height: 100%;
+    box-shadow: var(--shadow-sm);
   }
 
   div {
@@ -43,6 +59,11 @@
     border-radius: 16px;
     padding: 1rem;
     background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+
+  h2 {
+    margin-top: 0;
   }
 
   ul {

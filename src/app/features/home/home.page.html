@@ -1,23 +1,50 @@
-<app-hero [title]="hero.title" [subtitle]="hero.subtitle" [image]="hero.image"></app-hero>
+<app-hero [slides]="heroSlides"></app-hero>
 
-<section class="block reveal" appRevealOnScroll>
-  <p class="eyebrow">Who We Are</p>
-  <h2>Highway Star Mobility Design Studio</h2>
-  <div class="columns">
-    @for (item of highlights; track item) {
-      <p>{{ item }}</p>
-    }
+<section class="intro reveal" appRevealOnScroll>
+  <div class="intro-header">
+    <p class="eyebrow">Who We Are</p>
+    <h2>Highway Star Mobility Design Studio</h2>
+  </div>
+
+  <div class="intro-shell">
+    <article class="story">
+      @for (item of highlights; track item; let idx = $index) {
+        <p>
+          <span>{{ idx + 1 }}</span>
+          {{ item }}
+        </p>
+      }
+    </article>
+
+    <aside class="metrics">
+      <div>
+        <h3>12+</h3>
+        <p>Years Design Experience</p>
+      </div>
+      <div>
+        <h3>360 Degree</h3>
+        <p>Studio To Prototype Workflow</p>
+      </div>
+      <div>
+        <h3>50+</h3>
+        <p>Academic & Industry Projects</p>
+      </div>
+    </aside>
   </div>
 </section>
 
-<section class="block reveal" appRevealOnScroll>
-  <div class="title-row">
+<section class="showcase reveal" appRevealOnScroll id="projects">
+  <div class="title-row reveal" appRevealOnScroll>
     <div>
       <p class="eyebrow">Selected Work</p>
-      <h2>Projects / Portfolio</h2>
+      <h2>Projects / Portfolio That Turn Heads</h2>
+      <p class="section-subtitle">
+        Explore concept-to-reality projects where styling, detailing, and craftsmanship meet precision.
+      </p>
     </div>
-    <a routerLink="/projects">View All</a>
+    <a routerLink="/projects">View All Projects</a>
   </div>
+
   <div class="project-grid">
     @for (project of featuredProjects; track project.id) {
       <app-project-card [project]="project"></app-project-card>
@@ -25,16 +52,32 @@
   </div>
 </section>
 
-<section class="block reveal" appRevealOnScroll>
+<section class="services reveal" appRevealOnScroll>
   <p class="eyebrow">What We Do</p>
-  <h2>Services</h2>
+  <h2>Services That Build Real Mobility Experiences</h2>
   <div class="service-grid">
-    @for (service of featuredServices; track service.title) {
+    @for (service of featuredServices; track service.title; let idx = $index) {
       <article>
+        <span class="service-index">0{{ idx + 1 }}</span>
         <img [src]="service.image" [alt]="service.title" loading="lazy" />
         <h3>{{ service.title }}</h3>
         <p>{{ service.description }}</p>
+        <a routerLink="/services">Learn More</a>
       </article>
     }
   </div>
 </section>
+
+<section class="cta reveal" appRevealOnScroll>
+  <p class="eyebrow">Ready To Build</p>
+  <h2>Bring Your Next Mobility Idea To Life With Us</h2>
+  <p>
+    From first sketch to final show model, we partner with you across design, clay, and prototyping to create
+    standout outcomes.
+  </p>
+  <div class="cta-actions">
+    <a routerLink="/contact">Start A Project</a>
+    <a routerLink="/courses">Explore Academy</a>
+  </div>
+</section>
+

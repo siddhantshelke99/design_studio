@@ -5,6 +5,7 @@
     var(--surface);
   border-radius: 22px;
   padding: clamp(1.2rem, 2.8vw, 2.4rem);
+  box-shadow: var(--shadow-sm);
 
   .badge {
     display: inline-flex;
@@ -67,6 +68,20 @@
   border: 1px solid var(--border);
   border-radius: 16px;
   background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.batch-grid article,
+.program-card,
+.benefit-grid article {
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.batch-grid article:hover,
+.program-card:hover,
+.benefit-grid article:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .batch-grid article {
@@ -188,6 +203,12 @@
     margin-bottom: 0.8rem;
     border: 1px solid var(--border);
     break-inside: avoid;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.28s ease;
+  }
+
+  img:hover {
+    transform: translateY(-3px);
   }
 }
 
@@ -246,6 +267,7 @@
   justify-content: space-between;
   gap: 1rem;
   align-items: center;
+  box-shadow: var(--shadow-sm);
 
   h2 {
     margin: 0;

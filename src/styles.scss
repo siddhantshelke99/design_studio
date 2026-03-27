@@ -1,25 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Outfit:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --bg: #f1f2ef;
-  --surface: #fbfcfa;
-  --surface-2: #f4f7f6;
-  --text: #131b1d;
-  --text-muted: #4a5a5e;
-  --border: #d2dcd9;
-  --accent: #0f6a77;
-  --accent-2: #be8d59;
+  --bg: #eef2f4;
+  --surface: #f9fcff;
+  --surface-2: #f1f6fb;
+  --text: #132230;
+  --text-muted: #4b5f72;
+  --border: #c9d8e6;
+  --accent: #0f7484;
+  --accent-2: #c6844f;
+  --brand-primary: #0f7484;
+  --brand-secondary: #c6844f;
+  --brand-ink: #132230;
+  --brand-gradient: linear-gradient(130deg, #0f7484, #136b9a);
+  --brand-gradient-warm: linear-gradient(130deg, #f2c596, #c6844f);
+  --brand-glow: rgba(15, 116, 132, 0.2);
+  --shadow-sm: 0 12px 24px rgba(17, 28, 35, 0.08);
+  --shadow-md: 0 20px 42px rgba(17, 28, 35, 0.14);
+  --radius-md: 16px;
+  --radius-lg: 24px;
 }
 
 :root[data-theme='dark'] {
-  --bg: #0d1011;
-  --surface: #12191b;
-  --surface-2: #182224;
+  --bg: #091116;
+  --surface: #111d24;
+  --surface-2: #17262f;
   --text: #eff3f2;
-  --text-muted: #9fb0b3;
-  --border: #253336;
-  --accent: #5ac5cf;
-  --accent-2: #d9a167;
+  --text-muted: #a4bac8;
+  --border: #2a3f4d;
+  --accent: #59cad4;
+  --accent-2: #d8a16f;
+  --brand-primary: #59cad4;
+  --brand-secondary: #d8a16f;
+  --brand-ink: #eff3f2;
+  --brand-gradient: linear-gradient(130deg, #2b8ea2, #327db2);
+  --brand-gradient-warm: linear-gradient(130deg, #d8a16f, #a96f3f);
+  --brand-glow: rgba(89, 202, 212, 0.26);
+  --shadow-sm: 0 12px 24px rgba(0, 0, 0, 0.28);
+  --shadow-md: 0 22px 48px rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -37,8 +55,17 @@ body {
   background:
     radial-gradient(circle at 9% 4%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 28%),
     radial-gradient(circle at 92% 11%, color-mix(in srgb, var(--accent-2) 20%, transparent), transparent 30%),
+    radial-gradient(circle at 82% 88%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 34%),
     var(--bg);
   color: var(--text);
+}
+
+:root[data-theme='dark'] body {
+  background:
+    radial-gradient(circle at 8% 6%, color-mix(in srgb, var(--brand-primary) 22%, transparent), transparent 30%),
+    radial-gradient(circle at 86% 12%, color-mix(in srgb, var(--brand-secondary) 22%, transparent), transparent 34%),
+    radial-gradient(circle at 76% 88%, color-mix(in srgb, var(--brand-primary) 18%, transparent), transparent 38%),
+    linear-gradient(170deg, #081116, #0b141b 58%, #0a141a);
 }
 
 ::selection {
@@ -48,12 +75,12 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Sora', sans-serif;
   letter-spacing: -0.025em;
 }
 
 a {
-  transition: color 0.25s ease;
+  transition: color 0.25s ease, opacity 0.25s ease;
 }
 
 img,
@@ -74,4 +101,48 @@ video {
 
 section {
   position: relative;
+}
+
+.page-title {
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.85rem, 4.2vw, 3.2rem);
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.page-lead {
+  margin-top: 0.75rem;
+  max-width: 68ch;
+  color: var(--text-muted);
+  line-height: 1.66;
+}
+
+.soft-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--surface) 92%, #ffffff 8%), var(--surface));
+  box-shadow: var(--shadow-sm);
+}
+
+:root[data-theme='dark'] .soft-card {
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--surface) 94%, #0c151c 6%), color-mix(in srgb, var(--surface) 90%, #0a141a 10%));
+}
+
+.lift-hover {
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.lift-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-brand {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.64rem 1rem;
+  color: #fff;
+  background: var(--brand-gradient);
 }

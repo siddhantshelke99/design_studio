@@ -1,6 +1,7 @@
-<article class="card">
+<article class="card" [class.loaded]="imageLoaded()">
   <a [routerLink]="['/projects', project.slug]">
-    <img [src]="project.cover" [alt]="project.title" loading="lazy" />
+    <div class="media-skeleton" aria-hidden="true"></div>
+    <img [src]="project.cover" [alt]="project.title" loading="lazy" (load)="markLoaded()" (error)="markLoaded()" />
     <div class="layer">
       <p>{{ project.category }}</p>
       <h3>{{ project.title }}</h3>

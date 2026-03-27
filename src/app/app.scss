@@ -26,8 +26,15 @@
 
 .page-shell {
   width: min(1220px, 92vw);
-  margin: 1rem auto 0;
+  margin: 1.1rem auto 0;
   animation: content-fade 0.7s ease;
+  transition: opacity 0.28s ease, transform 0.28s ease, filter 0.28s ease;
+}
+
+.page-shell.route-loading {
+  opacity: 0.45;
+  transform: translateY(8px);
+  filter: blur(1.3px);
 }
 
 @keyframes content-fade {

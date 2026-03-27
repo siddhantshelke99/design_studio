@@ -3,7 +3,7 @@
 </div>
 
 <app-navbar></app-navbar>
-<main class="page-shell">
+<main class="page-shell" [class.route-loading]="isRouteTransitioning()">
   <router-outlet></router-outlet>
 </main>
 <app-footer></app-footer>

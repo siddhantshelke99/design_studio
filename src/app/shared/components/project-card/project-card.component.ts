@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Project } from '../../models/content.model';
 
@@ -10,4 +10,10 @@ import { Project } from '../../models/content.model';
 })
 export class ProjectCardComponent {
   @Input({ required: true }) project!: Project;
+
+  readonly imageLoaded = signal(false);
+
+  markLoaded(): void {
+    this.imageLoaded.set(true);
+  }
 }

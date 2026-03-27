@@ -13,19 +13,35 @@ export const navLinks = [
 
 export const heroSlides = [
   {
-    title: 'Home Away From Home Is Where Your Knowledge Increased',
-    subtitle: 'Highway Star Mobility Design Studio and Design Academy',
-    image: '/assets/media/homenew.jpg'
+    eyebrow: 'Signature Collection',
+    title: 'Where Vision Becomes Velocity',
+    subtitle:
+      'A premium mobility studio shaping automotive concepts through bold storytelling and precision design.',
+    image: '/assets/media/wp13795863.jpg'
   },
   {
-    title: 'Our Clay Lab, The Best Place For Professionalism',
-    subtitle: 'From concept to tangible physical 3D realization.',
-    image: '/assets/media/cm.jpeg'
+    eyebrow: 'Clay + Digital',
+    title: 'From Sketch To Sculpted Reality',
+    subtitle: 'From early ideation to tactile 3D form, we transform ideas into production-focused design language.',
+    image: '/assets/media/wp14806963.webp'
   },
   {
-    title: 'Our Handmade Models, Our Pride',
-    subtitle: 'Automotive digital design, clay sculpting and prototyping.',
-    image: '/assets/media/sm1.jpeg'
+    eyebrow: 'Prototype Precision',
+    title: 'Built For Impact, Engineered For Detail',
+    subtitle: 'Automotive digital design, clay sculpting, and prototype execution crafted to global standards.',
+    image: '/assets/media/wp3978403.jpg'
+  },
+  {
+    eyebrow: 'Performance Aesthetics',
+    title: 'Form Language With Intent',
+    subtitle: 'Every surface, contour, and stance is tuned for emotion, clarity, and performance presence.',
+    image: '/assets/media/wp3978397.jpg'
+  },
+  {
+    eyebrow: 'Future Mobility',
+    title: 'Design Experiences That People Remember',
+    subtitle: 'We create concept stories and physical outcomes that make your brand unforgettable at first sight.',
+    image: '/assets/media/wc1745112.webp'
   }
 ];
 

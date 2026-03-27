@@ -5,6 +5,11 @@
   color: var(--text-muted);
 }
 
+h1 {
+  margin: 0.45rem 0 0.7rem;
+  font-size: clamp(1.85rem, 4vw, 2.9rem);
+}
+
 .lead {
   max-width: 70ch;
   color: var(--text-muted);
@@ -23,11 +28,23 @@
     border-radius: 16px;
     background: var(--surface);
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.04);
     }
 
     div {
